@@ -56,9 +56,16 @@ class InitialController: UIViewController, TimerPopUpProtocol {
     
     //MARK: Button Actions
     
+    @IBAction func syncSoundLightAction(_ sender: UIButton) {
+        
+         startBeatsAndLight(sender: sender, syncSoundLight: true)
+         btn_sound.isSelected = true
+        
+    }
+    
     @IBAction func soundAction(_ sender: UIButton) {
         
-        startBinauralBeat(sender: sender)
+         startBeatsAndLight(sender: sender, syncSoundLight: false)
     }
     
     @IBAction func lightAction(_ sender: UIButton) {
@@ -70,11 +77,8 @@ class InitialController: UIViewController, TimerPopUpProtocol {
     
     @IBAction func playPauseAction(_ sender: UIButton) {
         
-        let next = storyboard?.instantiateViewController(withIdentifier: "FlashViewController") as! FlashViewController
+      goToFlashController()
         
-        next.initVal(frequency, colorString, brightness, isFlashLightOn)
-        
-        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func timerAction(_ sender: UIButton) {
@@ -116,38 +120,15 @@ class InitialController: UIViewController, TimerPopUpProtocol {
             updateTimerLabel(seconds:counter)
         }
     }
-    
-    func startBinauralBeat(sender: UIButton){
         
-        if(counter <= 1){
-            
-            Alert().showTimerAlertAndAction(withTitle: "Alert", withMessage: "Please select the time for Binaural Beats", inView: self, completionHandlerResponce: { (value) in
-                if value{
-                    self.navigationController?.popViewController(animated: true)
-                    sender.isSelected = false
-                    return
-                }
-            })
-            
-        }else if(isSoundOn){
-            
-            myUnit.stop(); counter = 0;  soundTimer.invalidate();  isSoundOn = !isSoundOn
-            
-            let (hour, minutes, seconds) = Helper.app.secondsToHoursMinutesSeconds(seconds: 0)
-            Helper.app.stopRotateImage(imageView: self.img_dotTimer, duration: CGFloat(0.5))
-            timeLbl.text = ("\(hour):\(minutes):\(seconds)")
-            
-        }else{
-            
-            soundTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-            myUnit.setFrequency(freq: Double(frequency))
-            myUnit.setToneTime(t: Double(counter))
-            myUnit.enableSpeaker()
-            Helper.app.rotateImage(imageView: self.img_dotTimer, duration: CGFloat(selectedSeconds))
-            isSoundOn = !isSoundOn
-        }
+    func goToFlashController(){
         
-        sender.isSelected = !sender.isSelected
+        let next = storyboard?.instantiateViewController(withIdentifier: "FlashViewController") as! FlashViewController
+           
+           next.initVal(frequency, colorString, brightness, isFlashLightOn)
+           
+           self.present(next, animated: true, completion: nil)
+        
     }
     
     func updateTimerLabel(seconds: Int){
@@ -157,6 +138,43 @@ class InitialController: UIViewController, TimerPopUpProtocol {
         timeLbl.text = ("\(hour):\(minutes):\(seconds)")
         
         counter -= 1
+    }
+    
+    func startBeatsAndLight(sender: UIButton, syncSoundLight: Bool){
+        
+        if(counter <= 1){
+                   
+                   Alert().showTimerAlertAndAction(withTitle: "Alert", withMessage: "Please select the time for Binaural Beats", inView: self, completionHandlerResponce: { (value) in
+                       if value{
+                           self.navigationController?.popViewController(animated: true)
+                           sender.isSelected = false
+                           return
+                       }
+                   })
+                   
+               }else if(isSoundOn){
+                   
+                   myUnit.stop(); counter = 0;  soundTimer.invalidate();  isSoundOn = !isSoundOn
+                   
+                   let (hour, minutes, seconds) = Helper.app.secondsToHoursMinutesSeconds(seconds: 0)
+                   Helper.app.stopRotateImage(imageView: self.img_dotTimer, duration: CGFloat(0.5))
+                   timeLbl.text = ("\(hour):\(minutes):\(seconds)")
+                   
+               }else{
+                   
+                   soundTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+                   myUnit.setFrequency(freq: Double(frequency))
+                   myUnit.setToneTime(t: Double(counter))
+                   myUnit.enableSpeaker()
+                   Helper.app.rotateImage(imageView: self.img_dotTimer, duration: CGFloat(selectedSeconds))
+                   isSoundOn = !isSoundOn
+            
+                 if syncSoundLight{
+                 goToFlashController()
+                 }
+               }
+               
+               sender.isSelected = !sender.isSelected
     }
     
     //MARK: Custom Delegates

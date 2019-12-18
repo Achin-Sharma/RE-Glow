@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,19 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-7w-l2d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-7w-l2d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJb-Uk-Chs" userLabel="aby">
+                                <rect key="frame" x="97.5" y="310" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XJb-Uk-Chs" secondAttribute="height" id="DEM-YZ-CD5"/>
+                                </constraints>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyO-7k-y4q">
-                                <rect key="frame" x="0.0" y="-30" width="375" height="880"/>
+                                <rect key="frame" x="0.0" y="-50" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xui-co-p1c">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3500"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="H4z-p9-c63">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H4z-p9-c63">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="3500"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2000" id="HzE-5D-P1i"/>
+                                                    <constraint firstAttribute="height" constant="3500" id="HzE-5D-P1i"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -80,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-0P-WwY" userLabel="Top options view">
-                                <rect key="frame" x="17" y="21" width="342" height="40"/>
+                                <rect key="frame" x="17" y="1" width="342" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_timer" translatesAutoresizingMaskIntoConstraints="NO" id="Gos-t5-c7F">
                                         <rect key="frame" x="5" y="5" width="30" height="30"/>
@@ -110,7 +114,7 @@
                                             <constraint firstAttribute="height" constant="34" id="jnp-SP-yre"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                                        <state key="normal" image="ic_dropDown_white"/>
+                                        <state key="normal" image="ic_expand_white"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jI-u4-AF4" userLabel="Settings">
                                         <rect key="frame" x="306" y="5" width="30" height="30"/>
@@ -144,30 +148,48 @@
                                     <constraint firstItem="Gos-t5-c7F" firstAttribute="leading" secondItem="lTV-0P-WwY" secondAttribute="leading" constant="5" id="xrh-W7-yU0"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-kq-dYZ">
+                                <rect key="frame" x="88" y="499" width="199" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1N8-Pt-Mvz">
+                                <rect key="frame" x="88" y="499" width="199" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JHI-X3-Etb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="SYNC SOUND AND LIGHT">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="syncSoundLightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXR-8N-0aA"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xFj-EH-iFk">
                                 <rect key="frame" x="20" y="655" width="335" height="63"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iC0-ju-yFC">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="63"/>
                                         <size key="titleShadowOffset" width="-1" height="0.0"/>
-                                        <state key="normal" image="icons8-sound-speaker-100"/>
-                                        <state key="selected" image="icons8-sound-speaker-100-2"/>
+                                        <state key="normal" image="ic_sound_off"/>
+                                        <state key="selected" image="ic_sound_on"/>
                                         <connections>
                                             <action selector="soundAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Edg-QH-3my"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcU-h1-vag">
                                         <rect key="frame" x="115" y="0.0" width="105" height="63"/>
-                                        <state key="normal" image="icons8-light-dimming-off-96"/>
-                                        <state key="selected" image="icons8-light-dimming-off-96-2"/>
+                                        <state key="normal" image="ic_light_off"/>
+                                        <state key="selected" image="ic_light_on"/>
                                         <connections>
                                             <action selector="lightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YdO-lR-RJQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-fO-DSl">
                                         <rect key="frame" x="230" y="0.0" width="105" height="63"/>
-                                        <state key="normal" image="icons8-play-100-2"/>
-                                        <state key="selected" image="icons8-pause-100"/>
+                                        <state key="normal" image="ic_pause"/>
+                                        <state key="selected" image="ic_play"/>
                                         <connections>
                                             <action selector="playPauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEh-HY-TyL"/>
                                         </connections>
@@ -185,18 +207,28 @@
                             <constraint firstItem="yJb-7w-l2d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="BNp-Yq-9wo"/>
                             <constraint firstAttribute="trailing" secondItem="xFj-EH-iFk" secondAttribute="trailing" constant="20" id="CFn-Jt-pHY"/>
                             <constraint firstAttribute="trailing" secondItem="lTV-0P-WwY" secondAttribute="trailing" constant="16" id="HBx-b4-hqa"/>
+                            <constraint firstItem="reQ-kq-dYZ" firstAttribute="height" secondItem="1N8-Pt-Mvz" secondAttribute="height" id="KHu-3i-3Qf"/>
+                            <constraint firstItem="XJb-Uk-Chs" firstAttribute="width" secondItem="UyO-7k-y4q" secondAttribute="width" multiplier="48%" id="LSB-pw-IJb"/>
                             <constraint firstItem="36U-VF-7kV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lpe-j9-hTE"/>
                             <constraint firstItem="UyO-7k-y4q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OUF-ak-lVk"/>
                             <constraint firstItem="lTV-0P-WwY" firstAttribute="top" secondItem="Ygd-wK-bGz" secondAttribute="bottom" constant="1" id="OeO-ue-eR8"/>
+                            <constraint firstItem="XJb-Uk-Chs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P5V-ei-UOY"/>
                             <constraint firstItem="36U-VF-7kV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q7F-LZ-6iz"/>
+                            <constraint firstItem="1N8-Pt-Mvz" firstAttribute="width" secondItem="UyO-7k-y4q" secondAttribute="width" multiplier="53%" id="SG4-R3-ceP"/>
                             <constraint firstAttribute="trailing" secondItem="UyO-7k-y4q" secondAttribute="trailing" id="Tlc-PS-c0K"/>
                             <constraint firstItem="yJb-7w-l2d" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="WF8-mA-2OZ"/>
                             <constraint firstItem="xFj-EH-iFk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="aHP-i8-7Do"/>
+                            <constraint firstItem="reQ-kq-dYZ" firstAttribute="centerX" secondItem="1N8-Pt-Mvz" secondAttribute="centerX" id="b8B-tA-tes"/>
                             <constraint firstItem="Mza-Wk-FDl" firstAttribute="top" secondItem="xFj-EH-iFk" secondAttribute="bottom" constant="82" id="c5f-bq-EG3"/>
                             <constraint firstItem="lTV-0P-WwY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="17" id="cRv-eN-NEt"/>
                             <constraint firstItem="Xui-co-p1c" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cT8-uO-YVT"/>
+                            <constraint firstItem="xFj-EH-iFk" firstAttribute="top" secondItem="1N8-Pt-Mvz" secondAttribute="bottom" constant="121" id="fDo-T2-Vng"/>
                             <constraint firstItem="yJb-7w-l2d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jc7-ZQ-Lrc"/>
+                            <constraint firstItem="reQ-kq-dYZ" firstAttribute="width" secondItem="1N8-Pt-Mvz" secondAttribute="width" id="r5n-q1-BDv"/>
                             <constraint firstItem="Mza-Wk-FDl" firstAttribute="top" secondItem="UyO-7k-y4q" secondAttribute="bottom" constant="-50" id="uKM-zs-j8h"/>
+                            <constraint firstItem="1N8-Pt-Mvz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vax-8U-vxo"/>
+                            <constraint firstItem="reQ-kq-dYZ" firstAttribute="centerY" secondItem="1N8-Pt-Mvz" secondAttribute="centerY" id="wrv-8t-jdz"/>
+                            <constraint firstItem="XJb-Uk-Chs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yEh-WC-mho"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -355,16 +387,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundImage" width="375" height="3589"/>
-        <image name="ic_dropDown_white" width="48" height="48"/>
-        <image name="ic_settings" width="48" height="48"/>
-        <image name="ic_timer" width="52" height="52"/>
+        <image name="background" width="375" height="3589"/>
+        <image name="ic_expand_white" width="21" height="19"/>
+        <image name="ic_light_off" width="41" height="41"/>
+        <image name="ic_light_on" width="41" height="41"/>
+        <image name="ic_pause" width="41" height="46.5"/>
+        <image name="ic_play" width="41" height="55.5"/>
+        <image name="ic_settings" width="41" height="41"/>
+        <image name="ic_sound_off" width="41" height="57.5"/>
+        <image name="ic_sound_on" width="41" height="36.5"/>
+        <image name="ic_timer" width="41" height="41"/>
         <image name="ic_white_dot" width="52" height="52"/>
-        <image name="icons8-light-dimming-off-96" width="48" height="48"/>
-        <image name="icons8-light-dimming-off-96-2" width="48" height="48"/>
-        <image name="icons8-pause-100" width="50" height="50"/>
-        <image name="icons8-play-100-2" width="50" height="50"/>
-        <image name="icons8-sound-speaker-100" width="50" height="50"/>
-        <image name="icons8-sound-speaker-100-2" width="50" height="50"/>
     </resources>
 </document>
